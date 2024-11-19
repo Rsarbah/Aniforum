@@ -1,0 +1,251 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* App background - Black */
+  color: #fff; /* Default text color - White */
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #fff; /* White for headings */
+}
+
+button {
+  padding: 10px 20px;
+  background: #ff0000; /* Red */
+  border: none;
+  color: #fff; /* White text */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #cc0000; /* Darker red for hover effect */
+}
+
+a {
+  text-decoration: none;
+  color: #ff0000; /* Links in red */
+}
+
+a:hover {
+  color: #cc0000; /* Darker red for hover effect */
+}
+
+/* Post Container */
+.post-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Post Card */
+.post-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1c1c1c; /* Dark gray for post background */
+  border: 1px solid #ff0000; /* Red border */
+  border-radius: 8px;
+  width: 60%; /* Takes 60% of parent container */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2); /* Red shadow effect */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 0, 0, 0.4); /* Intense red shadow on hover */
+}
+
+.post-card h2 {
+  color: #ff0000; /* Red title */
+  text-align: center;
+}
+
+.post-card img {
+  max-width:100%;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.post-card p {
+  color: #fff; /* White text for post details */
+  margin: 10px 0;
+}
+.post-card .post-content {
+  color: white;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+}
+
+/* Post Actions */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.post-actions button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+/* Sorting Buttons */
+.sort-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.sort-buttons button {
+  padding: 10px 15px;
+  background-color: #ff0000; /* Red */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sort-buttons button:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1c1c1c; /* Dark gray navbar */
+  padding: 10px 20px;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+}
+
+.navbar-links a {
+  margin: 0 10px;
+  color: #ff0000; /* Navbar links in red */
+}
+
+.navbar-links a:hover {
+  color: #cc0000; /* Darker red on hover */
+}
+
+.search-container input {
+  padding: 10px;
+  border: 1px solid #ff0000; /* Red border for search box */
+  border-radius: 4px;
+  background-color: #1c1c1c; /* Dark gray background */
+  color: #fff; /* White text */
+  padding-left: 0px;
+  width: 30%;
+  max-width: 400px;
+  padding-right: 40px;
+}
+.search-container{
+  width: 30%;
+  
+
+}
+.search-container input::placeholder {
+  color: #bbb; /* Light gray for placeholder text */
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #cc0000; /* Darker red on focus */
+}
+/* Centered Create Post Form */
+.create-post-container {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  /* transform: translate(-50%, -50%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: auto; */
+  width: 100%;
+  margin-top: 50px;
+  height: calc(100vh - 80px); 
+  background-color: #000; /* Black background */
+}
+
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #1c1c1c; /* Dark gray form background */
+  border: 1px solid #ff0000; /* Red border */
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2); /* Subtle red shadow */
+  color: #fff; /* White text */
+  height: 350px;
+}
+
+.create-post-form h1 {
+  color: #ff0000; /* Red title */
+  text-align: center;
+}
+
+.create-post-form input,
+.create-post-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ff0000; /* Red border */
+  border-radius: 4px;
+  background-color: #1c1c1c; /* Dark gray background */
+  color: #fff; /* White text */
+}
+
+.create-post-form input::placeholder,
+.create-post-form textarea::placeholder {
+  color: #bbb; /* Light gray placeholder */
+}
+
+.create-post-form input:focus,
+.create-post-form textarea:focus {
+  outline: none;
+  border-color: #cc0000; /* Darker red on focus */
+}
+
+.create-post-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #ff0000; /* Red button */
+  border: none;
+  color: #fff; /* White text */
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.create-post-form button:hover {
+  background: #cc0000; /* Darker red hover */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .post-card {
+    width: 90%; /* Adjust for smaller screens */
+  }
+}
