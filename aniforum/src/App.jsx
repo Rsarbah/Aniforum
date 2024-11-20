@@ -66,22 +66,32 @@ function App() {
   };
 
   return (
-    
     <Router>
-      <Navbar setSearchQuery={setSearchQuery} />
-      <Home searchQuery={searchQuery} />
-
-      <Routes>
-        <Route
-          path="/"
-          element={<Home posts={posts} searchQuery={searchQuery} deletePost={deletePost} />}
+  <Navbar setSearchQuery={setSearchQuery} />
+  <Routes>
+    <Route
+      path="/"
+      element={
+        <Home
+          posts={posts}
+          searchQuery={searchQuery}
+          deletePost={deletePost}
         />
+      }
+    />
+    <Route path="/create" element={<CreatePost addPost={addPost} />} />
+    <Route
+      path="/post/:id"
+      element={<PostDetail deletePost={deletePost} />}
+    />
+    <Route
+      path="/update-post/:id"
+      element={<UpdatePost updatePost={updatePost} />}
+    />
+  </Routes>
+</Router>
     
-        <Route path="/create" element={<CreatePost addPost={addPost} />} />
-        <Route path="/post/:id" element={<PostDetail deletePost={deletePost} />} />
-        <Route path="/update-post/:id" element={<UpdatePost updatePost={updatePost} />} />
-      </Routes>
-    </Router>
+        
   );
 }
 

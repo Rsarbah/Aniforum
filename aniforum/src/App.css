@@ -239,6 +239,9 @@ a:hover {
   font-size: 16px;
   margin-top: 10px;
 }
+.post-upvotes {
+  color: #ff0000;
+}
 
 .create-post-form button:hover {
   background: #cc0000; /* Darker red hover */
@@ -248,4 +251,29 @@ a:hover {
   .post-card {
     width: 90%; /* Adjust for smaller screens */
   }
+}
+
+.post-detail-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1c1c1c; /* Dark gray for post background */
+  border: 1px solid #ff0000; /* Red border */
+  border-radius: 8px;
+  width: 1000px; /* Takes 60% of parent container */
+  /* height: 40px; */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2); /* Red shadow effect */
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 20%;
+}
+
+.post-detail-container img {
+  max-width:60%;
+  
+
+}
+.post-detail-container p {
+  word-spacing: 1.5;
+  
 }
