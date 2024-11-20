@@ -4,7 +4,7 @@ import { supabase } from '../supabaseClient';
 import { useNavigate } from 'react-router-dom';
 
 
-const CreatePost = ({ addPost }) => {
+const CreatePost = () => {
   const [formData, setFormData] = useState({ title: '', content: '', image_url: '' });
   const navigate = useNavigate();
 
@@ -14,8 +14,24 @@ const CreatePost = ({ addPost }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addPost(formData); // Add the post to Supabase and App state
-    navigate('/'); // Redirect to Home
+
+    // Insert post data into Supabase
+    const { data, error } = await supabase.from('posts').insert([
+      {
+        title: formData.title,
+        content: formData.content,
+        image_url: formData.image_url,
+      },
+    ]);
+
+    if (error) {
+      console.error('Error inserting post:', error.message);
+      alert('Failed to create post!');
+    } else {
+      console.log('Post created:', data);
+      alert('Post created successfully!');
+      navigate('/'); // Redirect to the home page or wherever
+    }
   };
 
   return (
@@ -38,9 +54,9 @@ const CreatePost = ({ addPost }) => {
         />
         <input
           type="text"
-          name="imageUrl"
+          name="image_url"  // Fixed the name here to match the state key
           placeholder="Image URL (Optional)"
-          value={formData.imageUrl}
+          value={formData.image_url}  // Match this with the state key as well
           onChange={handleChange}
         />
         <button type="submit">Create Post</button>
@@ -48,5 +64,5 @@ const CreatePost = ({ addPost }) => {
     </div>
   );
 };
+
 export default CreatePost;
-  
